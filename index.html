@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Women's Day ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(#ff9ecf,#ffffff);
+text-align:center;
+overflow:hidden;
+}
+
+h1{
+margin-top:60px;
+color:#d63384;
+}
+
+#message{
+width:80%;
+margin:auto;
+font-size:20px;
+border-right:2px solid black;
+white-space:nowrap;
+overflow:hidden;
+animation:typing 8s steps(120,end);
+}
+
+@keyframes typing{
+from{width:0}
+to{width:80%}
+}
+
+.slideshow img{
+width:260px;
+border-radius:15px;
+margin-top:40px;
+}
+
+.heart{
+position:fixed;
+color:red;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{top:-10%}
+100%{top:110%}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Women's Day ❤️</h1>
+
+<div id="message">
+Happy Women's Day to one of the strongest women in my life.
+Your strength, kindness, and beautiful heart inspire me every day.
+You make the world brighter just by being in it.
+</div>
+
+<div class="slideshow">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<script>
+
+let images=["photo1.jpg","photo2.jpg","photo3.jpg"];
+let i=0;
+
+setInterval(function(){
+i++;
+if(i>=images.length){i=0;}
+document.getElementById("slide").src=images[i];
+},2000);
+
+function createHeart(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*30)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
